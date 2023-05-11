@@ -17,32 +17,22 @@
 
 <div>
 
-  <h1 class="display-5 fw-bold text-body-emphasis text-center">Job Hunt 🎯</h1>
+  <h2 class="pb-2 border-bottom">Job Hunt 🎯</h2>
 
-  <div class="col-lg-6 mx-auto">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
     
-    <div class="align-items-center justify-content-center">
-      <div class="list-group" id="roles">
+    <% @roles.each do |role| %>
 
-        <% @roles.each do |role| %>
-
-          <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-            <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
-            <div class="d-flex gap-2 w-100 justify-content-between">
-              <div class="text-left">
-                <h6 class="mb-0"><%= role.title %></h6>
-                <p class="mb-0 opacity-75"><%= role.notes %></p>
-              </div>
-              <small class="opacity-50 text-nowrap role-status"><%= role.status %></small>
-            </div>
-          </a>
-
-        <% end %>
-
+      <div class="feature col">
+        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"></use></svg>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4"><%= role.title %></h3>
+          <p><%= role.notes %></p>
+          <small class="opacity-50 text-nowrap role-status"><%= role.status %></small>
+        </div>
       </div>
-    </div>
+
+    <% end %>
 
   </div>
 </div>
-
-
