@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root "roles#index"
 
   get "/roles", to: "roles#index"
+  get "/roles/:id", to: "roles#show"
 end

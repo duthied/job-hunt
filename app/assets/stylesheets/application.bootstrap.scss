@@ -5,12 +5,25 @@ body {
   background-color: #333;
 }
 
-h1 {
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
   color: cornsilk;
 }
 
 p {
   color: darkgrey;
+}
+
+.role-header {
+  padding-top: 20px;
+}
+
+.role-status {
+  color: coral;
+  font-weight: bold;
 }
 
 .breadcrumb-chevron {
