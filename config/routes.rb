@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "roles#index"
 
-  get "/roles", to: "roles#index"
-  get "/roles/:id", to: "roles#show"
+  # get "/roles", to: "roles#index"
+  # get "/roles/:id", to: "roles#show"
+  # above lines replaced by:
+  resources :roles
 end
