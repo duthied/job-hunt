@@ -7,10 +7,10 @@
       </a>
     </li>
     <li class="breadcrumb-item">
-      <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">Roles</a>
+      <a class="link-body-emphasis fw-semibold text-decoration-none" href="/">Roles</a>
     </li>
     <li class="breadcrumb-item active" aria-current="page">
-      Index
+      <%= @role.title %>
     </li>
   </ol>
 </nav>
@@ -20,20 +20,14 @@
   <h2 class="pb-2 border-bottom">Job Hunt 🎯</h2>
 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-    
-    <% @roles.each do |role| %>
 
       <div class="feature col">
-        <a href="/roles/<%= role.id %>">
-          <div>
-            <h3 class="fw-bold mb-0 fs-4"><%= role.title %></h3>
-            <p><%= role.notes %></p>
-            <small class="opacity-50 text-nowrap role-status"><%= role.status %></small>
-          </div>
-        </a>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4"><%= @role.title %></h3>
+          <p><%= @role.notes %></p>
+          <small class="opacity-50 text-nowrap role-status"><%= @role.status %></small>
+        </div>
       </div>
-
-    <% end %>
 
   </div>
 </div>
