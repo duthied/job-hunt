@@ -12,7 +12,17 @@
 
   <body>
     <div class="container">
-      <h2 class="display-4 border-bottom role-header">Job Hunt 🎯</h2>
+      
+
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <h2 class="display-6 role-header">Job Hunt 🎯</h2>
+        </a>
+
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="/roles/new" class="nav-link">Create a Role</a></li>
+        </ul>
+    </header>
 
       <%= yield %>
     </div>

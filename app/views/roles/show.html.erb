@@ -17,6 +17,7 @@
           <h3 class="fw-bold mb-0 fs-4"><%= @role.title %></h3>
           <p><%= @role.notes %></p>
           <small class="opacity-50 text-nowrap role-status"><%= @role.status %></small>
+          <div><%= link_to "Edit", edit_role_path(@role) %></div>
         </div>
       </div>
 
