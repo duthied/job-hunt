@@ -7,6 +7,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #AED6F1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,6 +16,21 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   color: darkgrey;
+}
+
+h3.role-sub-header {
+ color: goldenrod
+}
+
+.message {
+  color: goldenrod
+ }
+
+.role-status-lead {
+  color: #FAD7A0;
+}
+.role-status-interviewing {
+  color: #ABEBC6;
 }
 
 .role-header {

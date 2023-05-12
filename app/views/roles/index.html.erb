@@ -9,20 +9,23 @@
   </ol>
 </nav>
 
-<div>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+<div class="row row-cols-1 row-cols-md-3 g-4">
     
     <% @roles.each do |role| %>
 
-      <div class="feature col">
-        <a href="<%= role_path(role) %>">
-          <div>
-            <h3 class="fw-bold mb-0 fs-4"><%= role.title %></h3>
-            <p><%= role.notes %></p>
-            <small class="opacity-50 text-nowrap role-status"><%= role.status %></small>
+      <a href="<%= role_path(role) %>">
+        <div class="col">
+          <div class="card text-bg-dark mb-3" style="max-width: 20rem;">
+            <div class="card-header"><%= role.title %></div>
+            <div class="card-body">
+              <small class="opacity-50 text-nowrap role-status-<%= role.status.downcase %>">
+                <%= role.status %>
+              </small>
+              <p class="card-text"><%= role.notes %></p>
+            </div>
           </div>
-        </a>
-      </div>
+        </div>
+      </a>
 
     <% end %>
 

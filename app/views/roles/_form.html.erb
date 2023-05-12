@@ -1,37 +1,41 @@
 <%= form_with model: role do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <% role.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
 
   <div>
-    <%= form.label :notes %><br>
-    <%= form.text_area :notes %>
-    <% role.errors.full_messages_for(:notes).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+
+    <div class="mb-5">
+      <%= form.label :title, { class: "form-label"} %>
+      <%= form.text_field :title, { class: "form-control", placeholder: "title of the role" } %>
+      <% role.errors.full_messages_for(:title).each do |message| %>
+        <div class="message"><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :notes, { class: "form-label"} %>
+      <%= form.text_area :notes, { class: "form-control", placeholder: "notes" } %>
+      <% role.errors.full_messages_for(:notes).each do |message| %>
+        <div class="message"><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :status, { class: "form-label"} %>
+      <%= form.text_area :status, { class: "form-control", placeholder: "Lead | Interviewing | Waiting | Bailed" } %>
+      <% role.errors.full_messages_for(:status).each do |message| %>
+        <div class="message"><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :url, { class: "form-label"} %>
+      <%= form.text_area :url, { class: "form-control", placeholder: "URL to the role description" } %>
+      <% role.errors.full_messages_for(:url).each do |message| %>
+        <div class="message"><%= message %></div>
+      <% end %>
+    </div>
+
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+
   </div>
 
-  <div>
-    <%= form.label :status %><br>
-    <%= form.text_field :status %>
-    <% role.errors.full_messages_for(:status).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :url %><br>
-    <%= form.text_field :url %>
-    <% role.errors.full_messages_for(:url).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>
