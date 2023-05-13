@@ -2,39 +2,35 @@
 
   <div>
 
-    <div class="mb-5">
-      <%= form.label :title, { class: "form-label"} %>
+    <div class="mb-2">
       <%= form.text_field :title, { class: "form-control", placeholder: "title of the role" } %>
       <% role.errors.full_messages_for(:title).each do |message| %>
         <div class="message"><%= message %></div>
       <% end %>
     </div>
 
-    <div class="mb-3">
-      <%= form.label :notes, { class: "form-label"} %>
+    <div class="mb-2">
       <%= form.text_area :notes, { class: "form-control", placeholder: "notes" } %>
       <% role.errors.full_messages_for(:notes).each do |message| %>
         <div class="message"><%= message %></div>
       <% end %>
     </div>
 
-    <div class="mb-3">
-      <%= form.label :status, { class: "form-label"} %>
-      <%= form.text_area :status, { class: "form-control", placeholder: "Lead | Interviewing | Waiting | Bailed" } %>
+    <div class="mb-2">
+      <%= form.text_field :status, { class: "form-control", placeholder: "Lead | Interviewing | Waiting | Bailed", size: 10 } %>
       <% role.errors.full_messages_for(:status).each do |message| %>
         <div class="message"><%= message %></div>
       <% end %>
     </div>
 
-    <div class="mb-3">
-      <%= form.label :url, { class: "form-label"} %>
+    <div class="mb-2">
       <%= form.text_area :url, { class: "form-control", placeholder: "URL to the role description" } %>
       <% role.errors.full_messages_for(:url).each do |message| %>
         <div class="message"><%= message %></div>
       <% end %>
     </div>
 
-    <%= form.submit "Submit", class: "btn btn-primary" %>
+    <%= form.submit "Submit", class: "btn btn-secondary btn-sm" %>
 
   </div>
 

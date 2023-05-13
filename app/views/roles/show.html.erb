@@ -15,18 +15,45 @@
 
     <div class="col-sm-3">
       <h3 class="fw-bold mb-0 fs-4"><%= @role.title %></h3>
-      <small class="opacity-50 text-nowrap role-status"><%= @role.status %></small>
+      <p><small class="badge bg-secondary role-status-<%= @role.status.downcase %>">
+        <%= @role.status %>
+      </small></p>
+
+      <div class="d-grid gap-2">
+        <%= link_to "Edit", edit_role_path(@role), class: "btn btn-secondary btn-sm" %>
+        <%= link_to "Delete", @role, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark btn-sm" %>
+      </div>
     </div>
 
     <div class="col-sm-7">
-      <p>Notes: <%= @role.notes %></p>
+      <h3 class="role-sub-header">Notes:</h3>
       
+      <p><%= @role.notes %></p>
+      
+      <div class="action-form">
+
+        <div class="b-example-divider"></div>
+        <div class="card-body actions">
+          <h6>Log Entries</h6>
+            <div>
+              <ul class="logentry-list-group">                  
+                <%= render @role.logentries %>
+              </ul>
+            </div>
+        </div>
+
+        <h6>Create</h6>
+        <%= render 'logentries/form' %>
+
+      </div>
     </div>
 
-    <div class="col-sm-2">
-      <div>
-        <%= link_to "Edit", edit_role_path(@role) %>
-        <%= link_to "Delete", @role, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-      </div>
+    <div class="col-sm-2 text-end">
+      <p>
+        <small class="opacity-50 text-nowrap role-updated-at">Modified<br /><%= @role.updated_at.strftime("%D - %H:%I:%M") %></small>
+      </p>
+      <p>
+        <small class="opacity-50 text-nowrap role-created-at">Created<br /><%= @role.created_at.strftime("%D - %H:%I:%M") %></small>
+      </p>
     </div>
   </div>

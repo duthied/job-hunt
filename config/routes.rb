@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   # get "/roles", to: "roles#index"
   # get "/roles/:id", to: "roles#show"
   # above lines replaced by:
-  resources :roles
+  resources :roles do
+    resources :logentries
+  end
 end
