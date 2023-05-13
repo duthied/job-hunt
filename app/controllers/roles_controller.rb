@@ -35,6 +35,13 @@ class RolesController < ApplicationController
     end
   end
 
+  def destroy
+    @role = Role.find(params[:id])
+    @role.destroy
+
+    redirect_to root_path, status: :see_other
+  end
+
   private
     def role_params
       params.require(:role).permit(:title, :notes, :status, :url)
