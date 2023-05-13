@@ -1,11 +1,13 @@
 <%= form_with model: [ @role, @role.logentries.build ] do |form| %>
-  <div class="mb-5">
-    <%= form.label :entry_type, { class: "form-label"} %>
-    <%= form.text_field :entry_type, { class: "form-control", placeholder: "type" } %>
+
+  <div class="row">
+    <div class="col-4">
+      <%= form.text_field :entry_type, { class: "form-control", placeholder: "type" } %>
+    </div>
+    <div class="col-8">
+      <%= form.text_area :body, { class: "form-control", placeholder: "body" } %>
+    </div>
   </div>
-  <div class="mb-5">
-    <%= form.label :body, { class: "form-label"} %>
-    <%= form.text_field :body, { class: "form-control", placeholder: "..." } %>
-  </div>
-  <%= form.submit "Submit", class: "btn btn-primary" %>
+  
+  <%= form.submit "Submit", class: "btn btn-primary btn-block mb-4" %>
 <% end %>
