@@ -20,35 +20,21 @@
 
     <div class="col-sm-7">
       <h3 class="role-sub-header">Notes:</h3>
+      
       <p><%= @role.notes %></p>
       
-      <div class="b-example-divider"></div>
-
       <div class="action-form">
-
-        <%= form_with model: [ @role, @role.logentries.build ] do |form| %>
-          <div class="mb-5">
-            <%= form.label :entry_type, { class: "form-label"} %>
-            <%= form.text_field :entry_type, { class: "form-control", placeholder: "type" } %>
-          </div>
-          <div class="mb-5">
-            <%= form.label :body, { class: "form-label"} %>
-            <%= form.text_field :body, { class: "form-control", placeholder: "..." } %>
-          </div>
-          <%= form.submit "Submit", class: "btn btn-primary" %>
-        <% end %>
-
+      
+        <div class="b-example-divider"></div>
         <div class="card-body actions">
-        
-          <h2>Actions</h2>
-          <% @role.logentries.each do |entry| %>
-            <p>
-            <span class=""><%= entry.entry_type %></span> - 
-            <span><%= entry.body %></span>
-            </p>
-          <% end %>
-
+          <h6>Log Entries</h6>
+          <%= render @role.logentries %>
         </div>
+
+        <div class="b-example-divider"></div>
+        <h6>Create a new one</h6>
+        <%= render 'logentries/form' %>
+
       </div>
     </div>
 
