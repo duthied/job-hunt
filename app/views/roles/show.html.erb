@@ -15,10 +15,14 @@
 
     <div class="col-sm-3">
       <h3 class="fw-bold mb-0 fs-4"><%= @role.title %></h3>
-      <small class="opacity-50 text-nowrap role-updated-at">Modified: <%= @role.updated_at.strftime("%D - %H:%I:%M") %></small>
       <p>
         <small class="opacity-50 text-nowrap role-status"><%= @role.status %></small>
       </p>
+
+      <div class="d-grid gap-2">
+        <%= link_to "Edit", edit_role_path(@role), class: "btn btn-secondary btn-sm" %>
+        <%= link_to "Delete", @role, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark btn-sm" %>
+      </div>
     </div>
 
     <div class="col-sm-7">
@@ -41,13 +45,12 @@
       </div>
     </div>
 
-    <div class="col-sm-2">
-      <div>
-        <%= link_to "Edit", edit_role_path(@role) %>
-        <%= link_to "Delete", @role, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-      </div>
+    <div class="col-sm-2 text-end">
       <p>
-        <small class="opacity-50 text-nowrap role-created-at">Created: <%= @role.created_at.strftime("%D - %H:%I:%M") %></small>
+        <small class="opacity-50 text-nowrap role-updated-at">Modified<br /><%= @role.updated_at.strftime("%D - %H:%I:%M") %></small>
+      </p>
+      <p>
+        <small class="opacity-50 text-nowrap role-created-at">Created<br /><%= @role.created_at.strftime("%D - %H:%I:%M") %></small>
       </p>
     </div>
   </div>

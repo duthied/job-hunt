@@ -21,7 +21,7 @@
               <small class="opacity-50 text-nowrap role-status-<%= role.status.downcase %>">
                 <%= role.status %>
               </small>
-              <p class="card-text"><%= role.notes %></p>
+              <p class="card-text"><%= role.notes.truncate(100) %></p>
             </div>
           </div>
         </div>
