@@ -1,4 +1,4 @@
-start : build db_migrate
+start : build migrate
 	bin/rails server
 
 server_only :
@@ -12,5 +12,5 @@ build_css :
 build_js :
 	bin/rails javascript:build
 
-db_migrate:
+migrate:
 	bin/rails db:migrate
