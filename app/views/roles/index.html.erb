@@ -18,7 +18,7 @@
           <div class="card text-bg-dark mb-3" style="max-width: 20rem;">
             <div class="card-header"><%= role.title %></div>
             <div class="card-body">
-              <small class="opacity-50 text-nowrap role-status-<%= role.status.downcase %>">
+              <small class="badge rounded-pill bg-secondary role-status-<%= role.status.downcase %>">
                 <%= role.status %>
               </small>
               <p class="card-text"><%= role.notes.truncate(100) %></p>

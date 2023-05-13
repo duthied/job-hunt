@@ -26,13 +26,22 @@ h3.role-sub-header {
   color: goldenrod
  }
 
-.role-status-lead {
-  color: #FAD7A0;
+.badge {
+  background-color: #273746 !important;
 }
+.role-status-lead {
+  color: #ECF0F1;
+}
+.role-status-interviewing {
+  color: #16A085;
+}
+.role-status-bailed {
+  color: #922B21;
+}
+
 .role-status-interviewing {
   color: #ABEBC6;
 }
-
 .role-header {
   padding-top: 20px;
 }
