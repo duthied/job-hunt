@@ -9,7 +9,9 @@
     </div>
   </div>
   
-  <%= form.submit "Submit", class: "btn btn-secondary btn-sm" %>
-  <%= link_to "Cancel", @role, class: "btn btn-dark btn-sm" %>
+  <div class="btn-group" role="group">
+    <%= form.submit "Save", class: "btn btn-secondary btn-sm" %>
+    <%= link_to "Cancel", @role, class: "btn btn-dark btn-sm" %>
+  </div>
 
 <% end %>
