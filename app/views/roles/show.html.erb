@@ -35,11 +35,14 @@
         <div class="b-example-divider"></div>
         <div class="card-body actions">
           <h6>Log Entries</h6>
-          <%= render @role.logentries %>
+            <div>
+              <ul class="logentry-list-group">                  
+                <%= render @role.logentries %>
+              </ul>
+            </div>
         </div>
 
-        <div class="b-example-divider"></div>
-        <h6>Create a new one</h6>
+        <h6>Create</h6>
         <%= render 'logentries/form' %>
 
       </div>
