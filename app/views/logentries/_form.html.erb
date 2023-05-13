@@ -1,10 +1,10 @@
 <%= form_with model: [ @role, @role.logentries.build ] do |form| %>
 
   <div class="row">
-    <div class="col-4">
-      <%= form.text_field :entry_type, { class: "form-control grey", placeholder: "type" } %>
+    <div class="col-2">
+      <%= form.select :entry_type, ["Manual", "System"] %>
     </div>
-    <div class="col-8">
+    <div class="col-10">
       <%= form.text_area :body, { class: "form-control", placeholder: "body" } %>
     </div>
   </div>

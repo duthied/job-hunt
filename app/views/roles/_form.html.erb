@@ -3,22 +3,23 @@
   <div>
 
     <div class="mb-2">
-      <%= form.text_field :title, { class: "form-control", placeholder: "title of the role" } %>
-      <% role.errors.full_messages_for(:title).each do |message| %>
-        <div class="message"><%= message %></div>
-      <% end %>
+      <div class="row g-3">
+        <div class="col-sm-3">
+          <%= form.select :status, ["Lead", "Interviewing", "Waiting", "Bailed"] %>
+        </div>
+
+        <div class="col-sm">
+          <%= form.text_field :title, { class: "form-control", placeholder: "title of the role" } %>
+          <% role.errors.full_messages_for(:title).each do |message| %>
+            <div class="message"><%= message %></div>
+          <% end %>
+        </div>
+      </div>
     </div>
 
     <div class="mb-2">
       <%= form.text_area :notes, { class: "form-control", placeholder: "notes" } %>
       <% role.errors.full_messages_for(:notes).each do |message| %>
-        <div class="message"><%= message %></div>
-      <% end %>
-    </div>
-
-    <div class="mb-2">
-      <%= form.text_field :status, { class: "form-control", placeholder: "Lead | Interviewing | Waiting | Bailed", size: 10 } %>
-      <% role.errors.full_messages_for(:status).each do |message| %>
         <div class="message"><%= message %></div>
       <% end %>
     </div>
@@ -30,9 +31,10 @@
       <% end %>
     </div>
 
-    <%= form.submit "Save", class: "btn btn-secondary btn-sm" %>
-    <%= link_to "Cancel", role, class: "btn btn-dark btn-sm" %>
-
+    <div class="btn-group" role="group">
+      <%= form.submit "Save", class: "btn btn-secondary btn-sm" %>
+      <%= link_to "Cancel", role, class: "btn btn-dark btn-sm" %>
+    </div>
   </div>
 
 <% end %>
