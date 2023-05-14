@@ -50,10 +50,10 @@
 
     <div class="col-sm-2 text-end">
       <p>
-        <small class="opacity-50 text-nowrap role-updated-at">Modified<br /><%= @role.updated_at.strftime("%D - %H:%I:%M") %></small>
-      </p>
-      <p>
-        <small class="opacity-50 text-nowrap role-created-at">Created<br /><%= @role.created_at.strftime("%D - %H:%I:%M") %></small>
+        <small class="opacity-50 text-nowrap role-updated-at">
+          Modified <%= distance_of_time_in_words(@role.updated_at, Time.now)%><br />
+          Created <%= distance_of_time_in_words(@role.created_at, Time.now)%>
+        </small>
       </p>
     </div>
   </div>

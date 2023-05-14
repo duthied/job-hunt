@@ -18,14 +18,14 @@
               <div class="card-header"><%= role.title %></div>
               
               <div class="card-body">
-                <small class="badge rounded-pill bg-secondary role-status-<%= role.status.downcase %>">
+                <small class="badge pill bg-secondary role-status-<%= role.status.downcase %>">
                   <%= role.status %>
                 </small>
                 <p class="card-text"><%= role.notes.truncate(100) %></p>
               </div>
               <div class="card-footer text-end">
                 <small class="opacity-50 text-nowrap role-updated-at">
-                  <%= role.updated_at.strftime("%D - %H:%I:%M") %>
+                  <%= distance_of_time_in_words(role.updated_at, Time.now)%>
                 </small>
               </div>
             </a>
