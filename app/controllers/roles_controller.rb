@@ -1,6 +1,7 @@
 class RolesController < ApplicationController
   def index
-    @roles = Role.all
+    @roles = Role.all.order("updated_at DESC")
+    @roles_count = @roles.count
   end
 
   def show
