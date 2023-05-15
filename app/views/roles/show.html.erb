@@ -23,9 +23,16 @@
         <%= link_to "Edit", edit_role_path(@role), class: "btn btn-secondary btn-sm" %>
         <%= link_to "Delete", @role, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-dark btn-sm" %>
       </div>
+
+      <p>
+        <small class="opacity-50 text-nowrap role-updated-at">
+          Modified <%= distance_of_time_in_words(@role.updated_at, Time.now)%><br />
+          Created <%= distance_of_time_in_words(@role.created_at, Time.now)%>
+        </small>
+      </p>
     </div>
 
-    <div class="col-sm-7">
+    <div class="col-sm-9">
       <h3 class="role-sub-header">Notes:</h3>
       
       <p><%= @role.notes %></p>
@@ -48,12 +55,4 @@
       </div>
     </div>
 
-    <div class="col-sm-2 text-end">
-      <p>
-        <small class="opacity-50 text-nowrap role-updated-at">
-          Modified <%= distance_of_time_in_words(@role.updated_at, Time.now)%><br />
-          Created <%= distance_of_time_in_words(@role.created_at, Time.now)%>
-        </small>
-      </p>
-    </div>
   </div>
