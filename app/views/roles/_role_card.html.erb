@@ -1,7 +1,9 @@
 <div class="col">  
   <div class="card text-bg-dark mb-3" style="max-width: 20rem;">
     <a href="<%= role_path(role) %>">
-      <div class="card-header"><%= role.title %></div>
+      <div class="card-header">
+        <h5><%= role.title %></h5>
+      </div>
       
       <div class="card-body">
         <small class="badge pill bg-secondary role-status-<%= role.status.downcase %>">
@@ -13,14 +15,14 @@
 
         <div class="row">
           <div class="col-sm text-start">
-            <h6 class="role-sub-header role-updated-at">
-              <%= role.logentries.count %>
-            </h6>
+            <span class="role-updated-at">
+              <%= role.logentries.count %> log entries
+            </span>
           </div>
           <div class="col-sm text-end">
-            <h6 class="role-sub-header role-updated-at">
+            <span class="role-updated-at">
               <%= distance_of_time_in_words(role.updated_at, Time.now) %>
-            </h6>
+            </span>
           </div>
         </div>
 

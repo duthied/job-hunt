@@ -57,22 +57,27 @@ a div.card-header:hover {
 
 .role-updated-at {
   color: #5D6D7E;
+  font-size: 0.5em;
 }
 .role-created-at {
   color: #5D6D7E;
+  font-size: 0.5em;
 }
 .roles-form-container {
   color: cornsilk;
 }
 
-input[type="text"] {
-  background-color: grey;
-  color:cornsilk;
+.btn-sm {
+  font-size: 0.5em !important;
 }
-.form-control {
-  background-color: grey;
-  color:cornsilk;
-}
+// input[type="text"] {
+//   background-color: grey;
+//   color:cornsilk;
+// }
+// .form-control {
+//   background-color: grey;
+//   color:cornsilk;
+// }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: cornsilk;
